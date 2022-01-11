@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CB86745C278DA18900AFC16D /* MovieListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86745B278DA18900AFC16D /* MovieListApp.swift */; };
-		CB86745E278DA18900AFC16D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86745D278DA18900AFC16D /* ContentView.swift */; };
+		CB86745E278DA18900AFC16D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86745D278DA18900AFC16D /* MainView.swift */; };
 		CB867460278DA18A00AFC16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB86745F278DA18A00AFC16D /* Assets.xcassets */; };
 		CB867463278DA18A00AFC16D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB867462278DA18A00AFC16D /* Preview Assets.xcassets */; };
 		CB86746D278DA18A00AFC16D /* MovieListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86746C278DA18A00AFC16D /* MovieListTests.swift */; };
 		CB867477278DA18A00AFC16D /* MovieListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB867476278DA18A00AFC16D /* MovieListUITests.swift */; };
 		CB867479278DA18A00AFC16D /* MovieListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB867478278DA18A00AFC16D /* MovieListUITestsLaunchTests.swift */; };
 		CB867486278DA1E200AFC16D /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB867485278DA1E200AFC16D /* MovieViewModel.swift */; };
+		CB867489278DABC400AFC16D /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB867488278DABC400AFC16D /* MovieModel.swift */; };
+		CB86748D278DB14B00AFC16D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CB86748C278DB14B00AFC16D /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		CB867458278DA18900AFC16D /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB86745B278DA18900AFC16D /* MovieListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListApp.swift; sourceTree = "<group>"; };
-		CB86745D278DA18900AFC16D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB86745D278DA18900AFC16D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB86745F278DA18A00AFC16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB867462278DA18A00AFC16D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB867468278DA18A00AFC16D /* MovieListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,7 @@
 		CB867476278DA18A00AFC16D /* MovieListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUITests.swift; sourceTree = "<group>"; };
 		CB867478278DA18A00AFC16D /* MovieListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB867485278DA1E200AFC16D /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		CB867488278DABC400AFC16D /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB86748D278DB14B00AFC16D /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				CB86745B278DA18900AFC16D /* MovieListApp.swift */,
-				CB86745D278DA18900AFC16D /* ContentView.swift */,
+				CB86745D278DA18900AFC16D /* MainView.swift */,
 				CB86745F278DA18A00AFC16D /* Assets.xcassets */,
 				CB867461278DA18A00AFC16D /* Preview Content */,
 				CB867487278DAB3300AFC16D /* ViewModel */,
+				CB86748A278DABC800AFC16D /* Model */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -138,6 +143,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CB86748A278DABC800AFC16D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB867488278DABC400AFC16D /* MovieModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +167,9 @@
 			dependencies = (
 			);
 			name = MovieList;
+			packageProductDependencies = (
+				CB86748C278DB14B00AFC16D /* SDWebImageSwiftUI */,
+			);
 			productName = MovieList;
 			productReference = CB867458278DA18900AFC16D /* MovieList.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +242,9 @@
 				Base,
 			);
 			mainGroup = CB86744F278DA18900AFC16D;
+			packageReferences = (
+				CB86748B278DB14B00AFC16D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = CB867459278DA18900AFC16D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,7 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB86745E278DA18900AFC16D /* ContentView.swift in Sources */,
+				CB867489278DABC400AFC16D /* MovieModel.swift in Sources */,
+				CB86745E278DA18900AFC16D /* MainView.swift in Sources */,
 				CB86745C278DA18900AFC16D /* MovieListApp.swift in Sources */,
 				CB867486278DA1E200AFC16D /* MovieViewModel.swift in Sources */,
 			);
@@ -597,6 +617,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB86748B278DB14B00AFC16D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB86748C278DB14B00AFC16D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB86748B278DB14B00AFC16D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB867450278DA18900AFC16D /* Project object */;
 }
