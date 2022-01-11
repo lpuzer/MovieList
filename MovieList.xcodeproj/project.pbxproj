@@ -100,7 +100,7 @@
 				CB86745D278DA18900AFC16D /* ContentView.swift */,
 				CB86745F278DA18A00AFC16D /* Assets.xcassets */,
 				CB867461278DA18A00AFC16D /* Preview Content */,
-				CB867485278DA1E200AFC16D /* MovieViewModel.swift */,
+				CB867487278DAB3300AFC16D /* ViewModel */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -128,6 +128,14 @@
 				CB867478278DA18A00AFC16D /* MovieListUITestsLaunchTests.swift */,
 			);
 			path = MovieListUITests;
+			sourceTree = "<group>";
+		};
+		CB867487278DAB3300AFC16D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB867485278DA1E200AFC16D /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

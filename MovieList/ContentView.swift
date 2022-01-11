@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var movieViewModel = MovieViewModel()
     var body: some View {
         Text("Hello, world!")
             .padding()
+            .onAppear {
+                movieViewModel.fetchData()
+            }
     }
 }
 
