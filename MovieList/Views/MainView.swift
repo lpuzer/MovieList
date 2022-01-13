@@ -10,6 +10,7 @@ import SDWebImageSwiftUI
 
 struct MainView: View {
     @ObservedObject var movieViewModel = MovieViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -18,18 +19,15 @@ struct MainView: View {
                 }else{
                     LoadingData()
                 }
+            }.onAppear {
+                movieViewModel.fetchData()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
-                 ToolbarItem(placement: .principal, content: {
-                 Text("Popular Kids Movies")
-              })})
-            
-
+                ToolbarItem(placement: .principal, content: {
+                    Text("Popular Kids Movies")
+                })})
         }
-        .onAppear {
-                movieViewModel.fetchData()
-            }
     }
 }
 
@@ -47,6 +45,7 @@ struct LoadingData: View {
 
 struct MovieMainList: View {
     @ObservedObject var movieViewModel = MovieViewModel()
+    @State var detailedView:Bool = false
     var movies: [Movie]
     var body: some View {
         VStack {
@@ -59,7 +58,7 @@ struct MovieMainList: View {
                             .onAppear {
                                 movieViewModel.fetchMovie(movie: movie)
                             }
-                    }   
+                    }
                 }
             }
             .listStyle(PlainListStyle())
@@ -76,7 +75,6 @@ struct MoviesCell: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 120)
                 .cornerRadius(10)
-            
             VStack (alignment: .leading, spacing: 5){
                 Text(movie.title)
                     .font(.title2)
@@ -102,7 +100,9 @@ struct RatingView: View {
                 .frame(width: 12, height: 12)
                 .foregroundColor(.orange)
             
-            Text(String(format: "%.1f", rating))                .fontWeight(.medium)
+            Text(String(format: "%.1f", rating))
+                .fontWeight(.medium)
         }
     }
 }
+
