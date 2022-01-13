@@ -1,7 +1,7 @@
 # MovieList
 
 <p></p>
-Esse aplicativo utiliza a API do The Movie Databank para retornar uma lista com os filmes mais pupulares para crianças. 
+Esse aplicativo utiliza a API do The Movie Database para retornar uma lista com os filmes mais pupulares para crianças. 
 
 Também é possível obter informações detalhadas sobre os filmes, através do endpoint getMovieDetails.
 
